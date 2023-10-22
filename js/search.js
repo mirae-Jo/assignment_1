@@ -42,3 +42,11 @@ function handleSearch() {
     });
 }
 searchBtn.addEventListener("click", handleSearch);
+
+//엔터키 작동
+input.addEventListener("keyup", function (event) {
+  if (event.keyCode === 13) {
+    event.preventDefault();
+    searchBtn.click();
+  }
+});

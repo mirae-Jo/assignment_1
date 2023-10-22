@@ -1,0 +1,365 @@
+@charset "utf-8";
+/* CSS Document */
+
+*{
+	margin:0 auto;
+	padding:0;
+	list-style:none;
+	font-family:"맑은 고딕";
+	color:#222328
+}
+body{
+	width:1000px;
+	background-color:#ffffff;
+	font-size:20px;
+}
+a{
+	text-decoration:none;
+	display:block;
+}
+header{
+	float:left;
+	position:absolute;
+}
+.top{             /*logo와 menu 묶어줌*/
+	float:left;
+	height:650px; /*좌측 로고와 메뉴가 들어가는 곳 높이*/
+	width:200px;  /*좌측 로고와 메뉴가 들어가는 곳 너비*/
+	background-color:#eeeeee;
+}
+.logo{
+	float:left;
+	height:40px;
+	width:200px;
+	margin-top:30px;
+	margin-bottom:30px;
+}
+.logo img{
+	float:left;
+	margin-top:5px;
+	margin-left:15px;
+}
+.menu{            /*메뉴 영역 스타일*/
+	width:180px;  
+	top:100px;    
+	left:10px;
+	position:absolute;
+	text-align:center;
+	z-index:1;  
+}
+.navi>li{         /*각 메뉴 스타일*/
+	width:180px;
+ 	display:block;
+}
+.navi>li>a{       /*각 메뉴의 <a> 요소 스타일*/ 
+	height:40px; 
+	width:180px; 
+	line-height:40px; 
+	font-size:16px;
+	font-weight:bold;
+	background-color:#222328; 
+	color:#ffffff; 
+}
+.navi>li>a:hover{ /*<a> 요소에 마우스를 올릴 때 스타일*/ 
+	background-color:#930930;
+	color:#ffff00; 
+}
+.submenu{         /*서브 메뉴 영역 스타일*/
+	float:left;
+	width:180px;
+	height:100%;
+	left:180px;
+	top:0px; 
+	position:absolute;
+	background-color:#cccccc;
+	display:none;
+	z-index:1;
+}
+.submenu>li>a{    /*각 서브 메뉴의 <a> 요소 스타일*/ 
+	height:40px;
+	width:180px;
+	line-height:40px;
+	font-size:14px;
+	font-weight:bold;
+	background-color:#cccccc;
+	color:#ffffff;
+}
+.submenu>li>a:hover{ /*<a> 요소에 마우스를 올릴 때 스타일*/ 
+	background-color:#999999;
+	color:#ffff00;
+}
+.bodywrap{        /*imgslide와 contents 묶어줌*/
+	float:right;
+	height:550px; /*imgslide 높이 + contents 높이*/
+	width:800px;  /*우측 너비*/
+}
+.imgslide{
+	height:350px; /*우측 이미지 슬라이드 높이*/
+	width:800px;  /*우측 너비*/
+	position:relative; /*이미지 슬라이드 영역 제한*/
+}
+.imgslide>a{      /*각 이미지 슬라이드의 <a> 요소 스타일*/ 
+	display:block; 
+	position:absolute; 
+	left:0px; 
+	top:0px;
+	overflow:hidden;
+	transition:all 3s;
+}
+.imgtext{         /*각 이미지 슬라이드의 텍스트 스타일*/ 
+	height:50px;
+    width:300px;
+    position:absolute;
+    margin: -25px 0 0 -150px;
+    text-align:center;
+	color:#ffffff;
+	font-weight:bold;
+    line-height:50px;
+    background-color:rgba(40,40,40,0.3);
+    left:50%;
+    top:50%;  
+}
+.contents{        /*tabmenu와 otherwrap 묶어줌*/
+	float:right; 
+	height:200px; /*우측 콘텐츠들(탭메뉴,배너,바로가기) 높이*/
+	width:800px;  /*우측 너비*/
+	position:absolute;
+}
+.tabmenu{         /*공지사항과 갤러리 탭메뉴가 들어가는 곳*/
+	float:left;
+	height:180px;
+	width:290px;
+	margin-top:10px;
+	margin-bottom:10px;
+	margin-left:5px;
+}
+.tabmenu>li{      /*탭 타이틀 영역 스타일*/
+	float:left;
+	width:80px;
+	line-height:30px;
+}
+.tabmenu>li>a{    /*탭 타이틀 영역 <a> 요소 스타일*/
+	display:block; 
+	font-size:14px;
+	text-align:center; 
+	background-color:#cccccc; 
+	border:1px solid #dddddd;
+	border-bottom:none;
+}
+.tabmenu>li>a:hover{ /*<a> 요소에 마우스를 올릴 때 스타일*/ 
+  	background-color:#eeeeee;
+}
+.tabmenu>li:first-child a{ /*탭 타이틀 첫 번째 요소의 <a> 요소 스타일*/ 
+	border-right:none;
+}
+.tabmenu>li.active>a{ /*active 클래스가 추가된 <a> 요소 스타일*/ 
+  	background-color:#ffffff; 
+}
+.tabmenu>li div{        /*탭 콘텐츠 영역 스타일*/
+	position:absolute;
+	left:5px;
+	height:0px;
+	overflow:hidden;
+}
+.tabmenu>li.active div{ /*active 클래스가 추가된 탭 콘텐츠 영역 스타일*/
+	width:288px; 
+	height:148px; 
+	border:1px solid #dddddd;
+	z-index:1;
+}
+.notice ul{  /*공지사항 콘텐츠 영역 스타일*/
+	float:left;
+	width:288px; 
+	margin-top:12px;
+	margin-bottom:12px;
+}
+.notice li{  /*공지사항 리스트 영역 스타일*/
+	height:32px;
+	line-height:32px;
+	font-size:13px;
+	margin-left:10px;
+	margin-right:10px;
+}
+.notice li:nth-child(2n){ /*공지사항 중 2배수 리스트 스타일*/
+	background-color:#cccccc;
+}
+.notice li span{   /*<span>요소로 구성한 날짜 영역 스타일*/
+	float:right;
+}
+.notice li:hover{  /*공지사항 리스트 영역에 마우스를 올릴 때 스타일*/
+	font-weight:bold;
+}
+.gallery li{  /*갤러리 콘텐츠 영역 스타일*/
+	float:left;
+	margin-top:20px;
+	margin-left:5px;
+}
+.gallery img{ /*갤러리 콘텐츠 이미지 영역 스타일*/
+	height:90px;
+	width:70px;
+	padding:10px;
+}
+.gallery li:hover{ /*갤러리 콘텐츠에 마우스를 올릴 때 스타일*/
+	opacity:0.5;
+}
+.otherwrap{        /*banner와 shortcut 묶어줌*/
+	float:right;
+	height:180px;  /*우측 콘텐츠들(배너,바로가기) 높이*/
+	width:500px;   /*우측 콘텐츠들(배너,바로가기) 너비*/
+}
+.banner{
+	float:left;
+	height:180px;  /*배너 영역 높이*/
+	width:295px;   /*배너 영역 너비*/
+    margin-top:10px;
+    margin-bottom:10px;
+}
+.banner img{       /*배너 이미지 스타일*/
+	float:left;
+	height:180px;
+	width:295px;
+}
+.bntext{           /*배너 글자 스타일*/
+	float:left;
+	height:40px;
+	width:200px;
+	position:absolute;
+	text-align:center;
+	color:#ffffff;
+	font-weight:bold;
+	line-height:40px;
+	background-color:rgba(40,40,40,0.3);
+	left:350px;
+	top:80px;
+}
+.banner img:hover{ /*배너 이미지에 마우스를 올릴 때 스타일*/
+	opacity:0.5;
+}
+.shortcut{
+	float:right;
+	height:180px;  /*바로가기 영역 높이*/
+	width:200px;   /*바로가기 영역 너비*/
+	margin-top:10px;
+	margin-bottom:10px;
+}
+.shortcut img{     /*바로가기 이미지 스타일*/
+	float:right;
+	height:180px;
+	width:200px;
+}
+.sctext{           /*바로가기 글자 스타일*/
+	float:right;
+	height:40px;
+    width:100px;
+    position:absolute;
+    text-align:center;
+	color:#ffffff;
+	font-weight:bold;
+    line-height:40px;
+    background-color:rgba(40,40,40,0.3);
+	left:650px;
+	top:80px;
+}
+.sctext:hover{    /*바로가기 글자에 마우스를 올릴 때 스타일*/
+	opacity:0.5;
+}
+#modal{
+	width:100%;
+	height:100%;
+	position:absolute;
+	left:0px;
+	top:0px;
+	background:rgba(0,0,0, 0.6); 
+	z-index:1; 
+	display:none;
+}
+#modal.active{
+	display:block;
+}
+.modal_up{
+	width:400px;
+	height:300px;
+	position:fixed;
+	left:40%; 
+	top:40%; 
+	background-color:#ffffff;
+}
+.uptitle{
+	margin-top:20px;
+	text-align:center; 
+	line-height:16px; 
+	font-size:20px; 
+	font-weight:bold;
+}
+.upbody{
+	padding:30px;
+	text-align:center;
+	font-size:16px;
+	line-height:30px; 
+}
+.btn{
+	height:20px;
+	width:80px; 
+	cursor:pointer;
+	display:block;
+	text-align:center;
+	font-size:15px;
+	font-weight:bold;
+	border-radius:3px;
+	background:#cccccc;
+	position:absolute; 
+	right:10px;
+	bottom:10px;
+}
+footer{
+	float:right;
+	height:100px; /*우측 하단 높이*/
+	width:800px;  /*우측 하단 너비*/
+}
+.bottom{
+	float:left;
+	height:100px; /*우측 하단 로고와 메뉴, Copyright 들어가는 곳 높이*/
+	width:800px;  /*우측 하단 로고와 메뉴, Copyright 들어가는 곳 너비*/
+	background-color:#cccccc;
+	position:absolute;
+}
+.btlogo{         
+	float:left;
+	height:100px; /*로고 영역 높이*/
+	width:200px;  /*로고 영역 너비*/
+}
+.btlogo img{      /*로고 이미지 스타일*/
+	float:left;
+	height:34px;
+	width:170px;
+	margin-top:33px;
+	margin-left:15px;
+}
+.site{            /*btmenu와 copy 묶어줌*/
+	float:right;
+	height:100px; /*하단 메뉴와 Copyright 들어가는 곳 높이*/
+	width:600px;  /*하단 메뉴와 Copyright 들어가는 곳 너비*/
+}
+.btmenu{
+	height:50px;  /*하단 메뉴 높이*/
+	width:600px;  /*하단 메뉴 너비*/
+    text-align:center;
+    font-size:14px;
+    line-height:30px
+}
+.btmenu li{
+    margin-top:10px;
+    display:inline-block;
+    width:100px;
+}
+.btmenu li:hover{
+    font-weight:bold;
+}
+.copy{
+	height:50px;  /*Copyright 높이*/
+	width:600px;  /*Copyright 너비*/
+    text-align:center;
+    font-size:14px;
+    line-height:50px
+}
+
